@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/users/Mamatvoia1000_7/:match*", "destination": "/" }
+    { "source": "/blox-fruits/private-server/:match*", "destination": "/" }
   ]
 }
