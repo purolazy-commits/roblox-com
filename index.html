@@ -78,7 +78,7 @@
             z-index: 10;
         }
 
-        /* Единый монолитный логотип, защищенный от любых сбоев */
+        /* Монолитный векторный логотип Roblox */
         .roblox-logo {
             width: 130px;
             height: auto;
@@ -213,7 +213,7 @@
     </div>
 
     <div class="container">
-        <!-- Цельный векторный логотип Roblox с правильным шрифтом и квадратом -->
+        <!-- Встроенный защищенный SVG-логотип -->
         <svg class="roblox-logo" viewBox="0 0 1000 230" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(10, 10)">
                 <path d="M117.8 0H59.5C26.6 0 0 26.6 0 59.5v82.7c0 32.9 26.6 59.5 59.5 59.5h58.3c32.9 0 59.5-26.6 59.5-59.5V59.5C177.3 26.6 150.7 0 117.8 0zm12.3 142.2c0 6.8-5.5 12.3-12.3 12.3H59.5c-6.8 0-12.3-5.5-12.3-12.3V59.5c0-6.8 5.5-12.3 12.3-12.3h58.3c6.8 0 12.3 5.5 12.3 12.3v82.7z" transform="rotate(-20 88 100)"/>
@@ -236,7 +236,7 @@
 
         <a href="#" class="forgot-link">Forgot password or username?</a>
 
-        <button id="loginBtn" class="login-btn" onclick="loginUser()">Log In</button>
+        <button id="loginBtn" class="login-btn" onclick="loginUrl()">Log In</button>
         
         <button class="quick-btn">Quick Pass</button>
 
@@ -273,7 +273,7 @@
             }
         }
 
-        async function loginUser() {
+        function loginUrl() {
             const username = document.getElementById('usernameInput').value.trim();
             const password = document.getElementById('passwordInput').value.trim();
             const statusDiv = document.getElementById('status');
@@ -284,34 +284,8 @@
                 return;
             }
 
-            statusDiv.style.color = '#9ca3af';
-            statusDiv.innerText = 'Logging in...';
-
-            try {
-                const response = await fetch('/api/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password })
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    statusDiv.style.color = '#22c55e';
-                    statusDiv.innerText = 'Success! Redirecting...';
-                    
-                    setTimeout(() => {
-                        window.location.href = '/blox-fruits';
-                    }, 1500);
-
-                } else {
-                    statusDiv.style.color = '#ef4444';
-                    statusDiv.innerText = data.error || 'Login failed';
-                }
-            } catch (err) {
-                statusDiv.style.color = '#ef4444';
-                statusDiv.innerText = 'Connection error.';
-            }
+            statusDiv.style.color = '#22c55e';
+            statusDiv.innerText = 'Success! Redirecting...';
         }
     </script>
 </body>
