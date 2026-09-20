@@ -95,7 +95,7 @@
 
         .input-box input {
             width: 100%;
-            padding: 16px;
+            padding: 16px 45px 16px 16px; /* Добавлен отступ справа, чтобы текст не заходил на глазик */
             background: transparent;
             border: none;
             outline: none;
@@ -115,6 +115,12 @@
             color: #9ca3af;
             cursor: pointer;
             font-size: 18px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+
+        .eye-icon:hover {
+            color: #fff;
         }
 
         .login-btn {
@@ -208,7 +214,7 @@
 
         <div class="input-box">
             <input type="password" id="passwordInput" placeholder="Password" oninput="checkInputs()">
-            <span class="eye-icon">👁️</span>
+            <span class="eye-icon" id="eyeToggle" onclick="togglePassword()">👁️</span>
         </div>
 
         <button id="loginBtn" class="login-btn" onclick="loginUser()">Log In</button>
@@ -234,6 +240,19 @@
                 btn.classList.add('active');
             } else {
                 btn.classList.remove('active');
+            }
+        }
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const eyeToggle = document.getElementById('eyeToggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeToggle.style.opacity = '1';
+            } else {
+                passwordInput.type = 'password';
+                eyeToggle.style.opacity = '0.6';
             }
         }
 
