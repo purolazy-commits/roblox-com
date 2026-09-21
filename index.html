@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Roblox Login</title>
 
     <meta property="og:site_name" content="Roblox">
@@ -79,7 +80,7 @@
             z-index: 10;
         }
 
-        /* Идеальный логотип в стиле Roblox */
+        /* Защищенный от переводчика логотип */
         .roblox-logo {
             font-family: 'Montserrat', sans-serif;
             font-size: 40px;
@@ -96,11 +97,11 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 31px;
+            height: 31px;
             background-color: #ffffff;
             transform: rotate(13deg);
-            border-radius: 0px; /* Убраны круглые углы */
+            border-radius: 0px;
             margin: 0 4px;
         }
 
@@ -239,8 +240,8 @@
     </div>
 
     <div class="container">
-        <!-- Ровный логотип Roblox с четким квадратным O -->
-        <div class="roblox-logo">
+        <!-- Защита от перевода с помощью translate="no" -->
+        <div class="roblox-logo" translate="no">
             R<span class="o-square"></span>BLOX
         </div>
 
@@ -292,7 +293,7 @@
                 eyeSvg.innerHTML = '<path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2.81 2.81L1.39 4.22l3.05 3.05C3.12 8.72 2.06 10.25 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l4.41 4.41 1.41-1.41L2.81 2.81zM10.96 10.96l2.08 2.08c-.32.22-.71.36-1.04.36-1.1 0-2-.9-2-2 0-.33.14-.72.36-1.04z"/>';
             } else {
                 passwordInput.type = 'password';
-                eyeSvg.innerHTML = '<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>';
+                eyeSvg.innerHTML = '<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3 z"/>';
             }
         }
 
