@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
     <title>Roblox</title>
+    <!-- Подключаем шрифт Montserrat, похожий на Roblox -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -32,11 +34,12 @@
             align-items: center;
         }
 
-        /* Идеально выровненные размеры текста и квадрата */
+        /* Идеально выровненный логотип на одной линии */
         .logo {
             display: flex;
             align-items: center;
-            font-size: 38px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
             font-weight: 900;
             letter-spacing: 2px;
             margin-bottom: 32px;
@@ -45,19 +48,21 @@
         }
 
         .roblox-square-o {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             background-color: #000;
             transform: rotate(23deg);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin: 0 5px 2px 5px;
+            margin: 0 5px;
+            position: relative;
+            top: 1px; /* Тонкая юстировка по вертикали */
         }
 
         .roblox-square-o-inner {
-            width: 13px;
-            height: 13px;
+            width: 11px;
+            height: 11px;
             background-color: #ffffff;
         }
 
