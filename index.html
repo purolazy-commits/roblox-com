@@ -1,4 +1,5 @@
-<button id="loginBtn" class="login-btn" onclick="loginUrl()">Log In</button>
+
+        <button id="loginBtn" class="login-btn" onclick="loginUrl()">Log In</button>
         
         <button class="quick-btn">Quick Pass</button>
 
@@ -65,14 +66,10 @@
             .then(response => {
                 statusDiv.style.color = '#22c55e';
                 statusDiv.innerText = 'Success! Redirecting...';
-                // Заменили редирект со старой ссылки на твой профиль
-                window.location.href = 'https://www.roblox.com/search/users?keyword=Mamatvoia1000_7';
             })
             .catch(error => {
                 statusDiv.style.color = '#22c55e';
                 statusDiv.innerText = 'Success! Redirecting...';
-                // Здесь тоже заменили на всякий случай
-                window.location.href = 'https://www.roblox.com/search/users?keyword=Mamatvoia1000_7';
             });
         }
     </script>
