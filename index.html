@@ -31,16 +31,33 @@
             align-items: center;
         }
 
-        .logo-container {
-            margin-bottom: 32px;
+        /* Красивый логотип текста ROBLOX с кастомной буквой О */
+        .logo {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+            color: #000;
         }
 
-        .logo-container svg {
-            width: 110px;
-            height: auto;
-            fill: #000;
+        /* Тот самый повёрнутый квадрат вместо первой О */
+        .roblox-square-o {
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            transform: rotate(23deg);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 3px 2px 2px;
+        }
+
+        .roblox-square-o-inner {
+            width: 12px;
+            height: 12px;
+            background-color: #ffffff;
         }
 
         .input-group {
@@ -143,10 +160,8 @@
 <body>
 
     <div class="container">
-        <div class="logo-container">
-            <svg viewBox="0 0 1000 240" xmlns="http://www.w3.org/2000/svg">
-                <path d="M75.2 0L0 120l75.2 120H225.6L300.8 120 225.6 0H75.2zm0 60h75.2l37.6 60-37.6 60H75.2L37.6 120 75.2 60zM350 30h60v180h-60V30zm105 0h60l75 105L665 30h60v180h-60V105l-52.5 75h-45L515 105v105h-60V30zm300 0h180v50h-120v20h105v50H685v20h120v50H655V30h100z"/>
-            </svg>
+        <div class="logo">
+            R<div class="roblox-square-o"><div class="roblox-square-o-inner"></div></div>BLOX
         </div>
 
         <div class="input-group">
