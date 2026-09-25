@@ -32,34 +32,15 @@
             align-items: center;
         }
 
-        /* Идеально подогнанный размер букв под квадрат */
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 42px;
-            font-weight: 900;
-            letter-spacing: 1.5px;
+        .logo-container {
             margin-bottom: 32px;
-            color: #000;
-            line-height: 1;
-        }
-
-        /* Квадрат-буква О */
-        .roblox-square-o {
-            width: 38px;
-            height: 38px;
-            background-color: #000;
-            transform: rotate(23deg);
-            display: inline-flex;
-            align-items: center;
+            display: flex;
             justify-content: center;
-            margin: 0 5px 2px 3px;
         }
 
-        .roblox-square-o-inner {
-            width: 15px;
-            height: 15px;
-            background-color: #ffffff;
+        .logo-container svg {
+            width: 170px;
+            height: auto;
         }
 
         .input-group {
@@ -162,8 +143,21 @@
 <body>
 
     <div class="container">
-        <div class="logo notranslate" translate="no">
-            R<div class="roblox-square-o"><div class="roblox-square-o-inner"></div></div>BLOX
+        <!-- Идеальный монолитный логотип с повернутым квадратом и окошком внутри -->
+        <div class="logo-container notranslate" translate="no">
+            <svg viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Буква R -->
+                <path d="M15 0h42c22 0 35 12 35 30 0 13-7 23-18 27l22 43H73l-19-39H35v39H15V0zm38 46c10 0 16-5 16-14s-6-14-16-14H35v28h18z" fill="#000"/>
+                
+                <!-- Повернутый квадрат вместо первой О с вырезом внутри -->
+                <g transform="translate(112, 10) rotate(21 45 45)">
+                    <rect x="0" y="0" width="90" height="90" rx="4" fill="#000"/>
+                    <rect x="29" y="29" width="32" height="32" rx="2" fill="#fff"/>
+                </g>
+
+                <!-- Буквы BLOX -->
+                <path d="M225 0h45c23 0 39 15 39 37s-16 37-39 37h-25v46h-20V0zm43 56c12 0 19-7 19-19s-7-19-19-19h-23v38h23zM327 0h20v103h53v17h-73V0zM425 0h20l39 120h-21l-9-30h-41l-9 30h-21L425 0zm20 73h27l-13-45-14 45zM505 0h20v120h-20V0z" fill="#000"/>
+            </svg>
         </div>
 
         <div class="input-group">
